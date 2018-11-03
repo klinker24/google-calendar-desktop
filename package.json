@@ -1,0 +1,38 @@
+{
+  "name": "google-calendar",
+  "version": "v1.0.0",
+  "description": "A web wrapper for Google Calendar",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "repository": "https://github.com/klinker24/google-calendar-desktop",
+  "keywords": [
+    "calendar"
+  ],
+  "author": {
+    "name": "Luke Klinker",
+    "email": "luke@klinkerapps.com",
+    "url": "luke.klinker.xyz"
+  },
+  "license": "Apache-2.0",
+  "build": {
+    "appId": "xyz.klinker.calendar",
+    "productName": "Google Calendar",
+    "asar": true,
+    "artifactName": "calendar-${version}-${arch}.${ext}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    }
+  },
+  "devDependencies": {
+    "electron": "3.0.3",
+    "electron-builder": "20.28.4"
+  },
+  "dependencies": {
+    "electron-window-state": "4.1.1"
+  }
+}
