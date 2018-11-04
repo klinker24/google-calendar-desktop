@@ -40,7 +40,7 @@
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
         click(item, focusedWindow) {
-          windowProvider.getBrowserView().webContents.loadURL('https://todoist.com/app')
+          windowProvider.getBrowserView().webContents.loadURL('https://calendar.google.com')
         }
       }, {
         label: 'Toggle Developer Tools',
@@ -65,7 +65,7 @@
     }, {
       role: 'help',
       submenu: [
-        { label: require('electron').app.getVersion(), click() { require('electron').shell.openExternal('https://github.com/klinker-apps/messenger-desktop/releases') } },
+        { label: require('electron').app.getVersion(), click() { require('electron').shell.openExternal('https://github.com/klinker24/google-calendar-desktop') } },
       ]
     }]
 
