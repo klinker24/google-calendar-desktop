@@ -1,6 +1,6 @@
 {
   "name": "google-calendar",
-  "version": "v1.3=4.0",
+  "version": "v1.4.0",
   "description": "A web wrapper for Google Calendar",
   "main": "main.js",
   "scripts": {
