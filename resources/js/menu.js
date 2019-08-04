@@ -100,15 +100,32 @@
         { type: 'separator' },
         { label: 'Bring All to Front', role: 'front' }
       ]
+    } else {
+      // Windows menu
+      template[2].submenu.push({ type: "separator" });
+      template[2].submenu.push({
+        accelerator: "Alt+M",
+        click: () => {
+          const win = windowProvider.getWindow();
+          const menuVisible = win.isMenuBarVisible();
+
+          win.setAutoHideMenuBar(menuVisible);
+          win.setMenuBarVisibility(!menuVisible);
+
+          browserviewPreparer.setBounds(win, windowProvider.getBrowserView());
+        },
+        label: "Toggle Menu Bar Visibility",
+      });
     }
 
-    const menu = Menu.buildFromTemplate(template)
-    Menu.setApplicationMenu(menu)
+    const window = windowProvider.getWindow();
+    const menu = Menu.buildFromTemplate(template);
 
-    // if they turn on auto hide, then this should be hidden.
-    // if they turn off auto hide, we will show this menu bar immediately.
-    windowProvider.getWindow().setMenuBarVisibility(false)
-    windowProvider.getWindow().setAutoHideMenuBar(true)
+    Menu.setApplicationMenu(menu);
+    window.setAutoHideMenuBar(true);
+    window.setMenuBarVisibility(false);
+
+    browserviewPreparer.setBounds(window, windowProvider.getBrowserView());
   }
 
   module.exports.buildMenu = buildMenu
