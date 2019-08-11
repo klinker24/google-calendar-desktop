@@ -25,7 +25,7 @@
   var setBounds = (window, browser) => {
     browser.setBounds({ 
       x: 0, 
-      y: 0, 
+      y: getTitleBarOffset(), 
       width: window.getBounds().width, 
       height: window.getBounds().height - getTitleBarSize(window)
     });
@@ -38,6 +38,14 @@
       return window.isMenuBarVisible() ? 60 : 40;
     } else {
       return window.isMenuBarVisible() ? 25 : 0;
+    }
+  }
+
+  function getTitleBarOffset() {
+    if (process.platform === "darwin") {
+      return 20;
+    } else {
+      return 0;
     }
   }
 
