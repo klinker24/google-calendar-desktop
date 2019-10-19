@@ -13,7 +13,8 @@
     "build-linux": "electron-builder build --linux rpm deb AppImage",
     "publish-mac": "electron-builder build --mac --publish always",
     "publish-linux": "electron-builder build --linux rpm deb AppImage --publish always",
-    "publish-windows": "electron-builder build --windows nsis --x64 --ia32 --publish always"
+    "publish-windows": "electron-builder build --windows nsis --x64 --ia32 --publish always",
+    "publish-win-mac": "yarn build && electron-builder build --mac --windows nsis --x64 --ia32 --publish always"
   },
   "repository": "https://github.com/klinker24/google-calendar-desktop",
   "keywords": [
