@@ -70,7 +70,7 @@
     }]
 
     if (process.platform === 'darwin') {
-      const name = require('electron').app.getName()
+      const name = require('electron').app.name
       template.unshift({
         label: name,
         submenu: [
@@ -109,7 +109,7 @@
           const win = windowProvider.getWindow();
           const menuVisible = win.isMenuBarVisible();
 
-          win.setAutoHideMenuBar(menuVisible);
+          win.autoHideMenuBar = menuVisible;
           win.setMenuBarVisibility(!menuVisible);
 
           browserviewPreparer.setBounds(win, windowProvider.getBrowserView());
@@ -122,7 +122,8 @@
     const menu = Menu.buildFromTemplate(template);
 
     Menu.setApplicationMenu(menu);
-    window.setAutoHideMenuBar(true);
+    
+    window.autoHideMenuBar = true;
     window.setMenuBarVisibility(false);
 
     browserviewPreparer.setBounds(window, windowProvider.getBrowserView());
