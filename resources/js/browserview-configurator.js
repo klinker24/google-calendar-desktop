@@ -43,7 +43,9 @@
 
   function getTitleBarOffset() {
     if (process.platform === "darwin") {
-      return 20;
+      return 0;
+    } else if (process.platform === "win32") {
+      return 0;
     } else {
       return 0;
     }
