@@ -44,6 +44,8 @@ app.on('before-quit', () => {
   app.exit(0)
 })
 
+app.userAgentFallback = app.userAgentFallback = 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10136'
+
 function createWindow() {
   initialize()
 
