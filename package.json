@@ -1,6 +1,6 @@
 {
   "name": "google-calendar",
-  "version": "v1.6.2",
+  "version": "v1.7.1",
   "description": "A web wrapper for Google Calendar",
   "main": "main.js",
   "scripts": {
@@ -62,8 +62,8 @@
   "devDependencies": {
     "@types/node": "^12.6.8",
     "dotenv": "^8.1.0",
-    "electron": "7.1.2",
-    "electron-builder": "22.1.0",
+    "electron": "8.0.0",
+    "electron-builder": "22.3.2",
     "electron-notarize": "^0.1.1"
   },
   "dependencies": {
